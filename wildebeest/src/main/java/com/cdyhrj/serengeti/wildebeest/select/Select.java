@@ -1,6 +1,7 @@
 package com.cdyhrj.serengeti.wildebeest.select;
 
 import com.cdyhrj.serengeti.wildebeest.api.IQueryExecutor;
+import com.cdyhrj.serengeti.wildebeest.api.ResultSetExtractorFunction;
 import com.cdyhrj.serengeti.wildebeest.field.Field;
 import com.cdyhrj.serengeti.wildebeest.where.Where;
 import com.google.common.collect.ImmutableMap;
@@ -65,9 +66,9 @@ public class Select {
         return null;
     }
 
-    public <R> R fetchInto(Function<ResultSet, R> extractor) {
+    public <R> R fetchInto(ResultSetExtractorFunction<R> resultSetExtractor) {
         Map<String, Object> paramMap = ImmutableMap.of();
 
-        return this.queryExecutor.query("", paramMap, extractor);
+        return this.queryExecutor.fetch("", paramMap, resultSetExtractor);
     }
 }
