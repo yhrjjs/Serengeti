@@ -1,4 +1,4 @@
-package com.cdyhrj.serengeti.wildebeest.api;
+package com.cdyhrj.serengeti.wildebeest.field;
 
 import lombok.Data;
 import lombok.experimental.Accessors;

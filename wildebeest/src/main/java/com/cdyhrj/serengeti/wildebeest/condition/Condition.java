@@ -1,4 +1,4 @@
-package com.cdyhrj.serengeti.wildebeest.api;
+package com.cdyhrj.serengeti.wildebeest.condition;
 
 import lombok.Data;
 import org.jetbrains.annotations.NotNull;

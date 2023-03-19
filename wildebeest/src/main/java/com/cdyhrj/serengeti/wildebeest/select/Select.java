@@ -1,10 +1,20 @@
-package com.cdyhrj.serengeti.wildebeest.api;
+package com.cdyhrj.serengeti.wildebeest.select;
 
+import com.cdyhrj.serengeti.wildebeest.api.IQueryExecutor;
+import com.cdyhrj.serengeti.wildebeest.field.Field;
+import com.cdyhrj.serengeti.wildebeest.where.Where;
+import com.google.common.collect.ImmutableMap;
+
+import java.sql.ResultSet;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.function.Function;
 
 public class Select {
+    private IQueryExecutor queryExecutor;
+
     public static Select of() {
         return new Select();
     }
@@ -49,5 +59,15 @@ public class Select {
 
     public int count() {
         return 0;
+    }
+
+    public <T> T fetchInto(Class<T> clazz) {
+        return null;
+    }
+
+    public <R> R fetchInto(Function<ResultSet, R> extractor) {
+        Map<String, Object> paramMap = ImmutableMap.of();
+
+        return this.queryExecutor.query("", paramMap, extractor);
     }
 }

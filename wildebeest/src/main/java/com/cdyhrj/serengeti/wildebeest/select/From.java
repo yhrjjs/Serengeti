@@ -1,5 +1,6 @@
-package com.cdyhrj.serengeti.wildebeest.api;
+package com.cdyhrj.serengeti.wildebeest.select;
 
+import com.cdyhrj.serengeti.wildebeest.table.Table;
 import lombok.Data;
 
 @Data

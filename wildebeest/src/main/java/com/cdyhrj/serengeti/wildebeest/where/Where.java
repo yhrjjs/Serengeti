@@ -1,5 +1,7 @@
-package com.cdyhrj.serengeti.wildebeest.api;
+package com.cdyhrj.serengeti.wildebeest.where;
 
+import com.cdyhrj.serengeti.wildebeest.select.Select;
+import com.cdyhrj.serengeti.wildebeest.condition.Condition;
 import lombok.Data;
 
 import java.util.ArrayList;
@@ -32,7 +34,7 @@ public class Where {
         return this;
     }
 
-    public Select back() {
+    public Select toSelect() {
         return this.select;
     }
 }
